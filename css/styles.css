@@ -1232,6 +1232,10 @@ a.contact-item:hover { color: var(--color-navy); }
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .clients-grid--5 .client-card {
+    flex: 0 1 calc(50% - var(--space-5));
+  }
+
   .approach-grid {
     grid-template-columns: 1fr;
   }
@@ -1332,6 +1336,10 @@ a.contact-item:hover { color: var(--color-navy); }
     grid-template-columns: 1fr 1fr;
   }
 
+  .clients-grid--5 .client-card {
+    flex: 0 0 100%;
+  }
+
   /* Approach */
   .approach-visual {
     grid-template-columns: 1fr;
@@ -1369,6 +1377,10 @@ a.contact-item:hover { color: var(--color-navy); }
 
   .clients-grid {
     grid-template-columns: 1fr;
+  }
+
+  .clients-grid--5 .client-card {
+    flex: 0 0 100%;
   }
 
   .approach-visual { display: none; }
