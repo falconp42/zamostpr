@@ -142,16 +142,31 @@
         return;
       }
 
-      // Simulate form submission (replace with real endpoint)
       submitBtn.disabled = true;
       submitBtn.textContent = 'Sending...';
 
-      await new Promise(r => setTimeout(r, 1200)); // simulate network
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        });
 
-      form.reset();
-      form.hidden = true;
-      successEl.removeAttribute('hidden');
-      successEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        if (response.ok) {
+          form.reset();
+          form.hidden = true;
+          successEl.removeAttribute('hidden');
+          successEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        } else {
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Send Message';
+          alert('Something went wrong. Please try again or email barbara@zamostpr.com directly.');
+        }
+      } catch (err) {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Send Message';
+        alert('Something went wrong. Please try again or email barbara@zamostpr.com directly.');
+      }
     });
   }
 
