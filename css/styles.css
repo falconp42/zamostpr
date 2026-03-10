@@ -1277,11 +1277,13 @@ a.contact-item:hover { color: var(--color-navy); }
   .nav-links a,
   .scrolled .nav-links a {
     font-size: 1.5rem;
-    color: rgba(255,255,255,0.85);
+    color: rgba(255,255,255,0.85) !important;
   }
 
   .nav-links a:hover,
-  .scrolled .nav-links a:hover { color: var(--color-white); }
+  .scrolled .nav-links a:hover { color: var(--color-white) !important; }
+
+  .scrolled .nav-hamburger span { background: var(--color-navy); }
 
   .nav-cta {
     font-size: 1.25rem !important;
