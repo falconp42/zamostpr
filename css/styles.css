@@ -657,7 +657,7 @@ input, textarea, select {
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(250, 247, 242, 0.88);
+  background: rgba(250, 247, 242, 0.80);
 }
 
 .clients > .container {
