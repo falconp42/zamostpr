@@ -649,7 +649,20 @@ input, textarea, select {
    CLIENTS
    ============================================ */
 .clients {
-  background: var(--color-cream);
+  background: var(--color-cream) url('../images/Puppy-Raising-Spokesmodel_web.webp') center center / cover no-repeat;
+  position: relative;
+}
+
+.clients::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(250, 247, 242, 0.88);
+}
+
+.clients > .container {
+  position: relative;
+  z-index: 1;
 }
 
 .featured-client {
