@@ -325,9 +325,9 @@ input, textarea, select {
 
 .hero-badge {
   display: inline-block;
-  background: rgba(200,136,42,0.2);
-  border: 1px solid rgba(200,136,42,0.4);
-  color: var(--color-gold-light);
+  background: rgba(26,45,74,0.7);
+  border: 1px solid rgba(200,136,42,0.5);
+  color: var(--color-white);
   font-size: 0.8125rem;
   font-weight: 600;
   letter-spacing: 0.1em;
