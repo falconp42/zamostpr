@@ -1014,6 +1014,20 @@ a.contact-item:hover { color: var(--color-navy); }
   box-shadow: var(--shadow-sm);
 }
 
+.contact-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-image img {
+  width: 100%;
+  max-width: 480px;
+  height: auto;
+  border-radius: var(--radius-xl);
+  object-fit: cover;
+}
+
 /* Form */
 .contact-form-wrap {
   background: var(--color-white);
