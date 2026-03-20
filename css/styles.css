@@ -1292,6 +1292,11 @@ a.contact-item:hover { color: var(--color-navy); }
   }
 
   /* Hero */
+  .hero {
+    min-height: 85svh;
+    background-position: center 40%;
+  }
+
   .hero-actions {
     flex-direction: column;
     align-items: center;
