@@ -1479,6 +1479,13 @@ a.contact-item:hover { color: var(--color-navy); }
   grid-column: 1 / -1;
 }
 
+.campaigns-featured {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-6);
+}
+
 .campaign-type {
   display: inline-block;
   font-size: 0.6875rem;
@@ -1677,6 +1684,10 @@ a.contact-item:hover { color: var(--color-navy); }
 }
 
 @media (max-width: 768px) {
+  .campaigns-featured {
+    grid-template-columns: 1fr;
+  }
+
   .campaigns-grid {
     grid-template-columns: 1fr;
   }
