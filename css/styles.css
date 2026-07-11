@@ -1139,7 +1139,31 @@ a.contact-item:hover { color: var(--color-navy); }
   font-size: 0.9375rem;
 }
 
-.form-success[hidden] { display: none; }
+.google-form-embed[hidden],
+.contact-form-fallback[hidden] {
+  display: none;
+}
+
+.google-form-embed iframe {
+  width: 100%;
+  min-height: 780px;
+  border: 0;
+  border-radius: var(--radius-sm);
+  background: var(--color-white);
+}
+
+.contact-form-lead {
+  font-size: 0.9375rem;
+  color: var(--color-text-mid);
+  line-height: 1.65;
+  margin-bottom: var(--space-5);
+}
+
+.contact-form-fallback {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
 
 /* ============================================
    FOOTER

@@ -517,50 +517,27 @@
           </div>
         </div>
         <div class="contact-form-wrap">
-          <form id="contact-form" class="contact-form" action="https://formsubmit.co/ajax/barbara@zamostpr.com" method="POST" novalidate>
-            <input type="hidden" name="_subject" value="New inquiry from zamostpr.com" />
-            <input type="hidden" name="_captcha" value="false" />
-            <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
-            <div class="form-row">
-              <div class="form-group">
-                <label for="first-name">First name <span>*</span></label>
-                <input type="text" id="first-name" name="first_name" required autocomplete="given-name" />
-                <span class="field-error" id="first-name-error"></span>
-              </div>
-              <div class="form-group">
-                <label for="last-name">Last name <span>*</span></label>
-                <input type="text" id="last-name" name="last_name" required autocomplete="family-name" />
-                <span class="field-error" id="last-name-error"></span>
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="email">Email <span>*</span></label>
-              <input type="email" id="email" name="email" required autocomplete="email" />
-              <span class="field-error" id="email-error"></span>
-            </div>
-            <div class="form-group">
-              <label for="need">What do you need?</label>
-              <select id="need" name="need">
-                <option value="">Select one (optional)</option>
-                <option value="Campaign launch">Campaign launch</option>
-                <option value="Ongoing PR">Ongoing PR / media relations</option>
-                <option value="Crisis">Crisis communications</option>
-                <option value="Media training">Media training</option>
-                <option value="Other">Other</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="message">Message <span>*</span></label>
-              <textarea id="message" name="message" rows="5" required placeholder="Tell me about your organization and what you're hoping to accomplish."></textarea>
-              <span class="field-error" id="message-error"></span>
-            </div>
-            <button type="submit" class="btn btn-primary btn-full" id="submit-btn">Send Message</button>
-          </form>
-          <div class="form-success" id="form-success" hidden>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-            <span>Thank you — your message is on its way. Barbara will be in touch soon.</span>
+          <div class="google-form-embed" id="google-form-embed" hidden>
+            <iframe
+              id="google-form-iframe"
+              title="Contact Barbara Zamost"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+            <p class="contact-form-note">
+              Trouble with the embed?
+              <a href="#" id="google-form-external-link" target="_blank" rel="noopener noreferrer">Open the form in a new tab</a>.
+            </p>
           </div>
-          <p class="contact-form-note">Prefer email? <a href="mailto:barbara@zamostpr.com">barbara@zamostpr.com</a></p>
+          <div class="contact-form-fallback" id="contact-form-fallback">
+            <p class="contact-form-lead">
+              Prefer to reach out directly? Email is the fastest way to start a conversation.
+            </p>
+            <a href="mailto:barbara@zamostpr.com?subject=Website%20inquiry" class="btn btn-primary btn-full">Email Barbara</a>
+            <p class="contact-form-note">
+              Or call <a href="tel:+14159872810">(415) 987-2810</a>.
+            </p>
+          </div>
         </div>
       </div>
     </section>
@@ -604,6 +581,7 @@
     </div>
   </footer>
 
+  <script src="js/config.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
