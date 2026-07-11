@@ -41,3 +41,5 @@ Until that URL is set, the contact section shows an email fallback.
 ## Branch: `feature/proof-campaigns-contact`
 
 Adds proof strip, campaigns section, enhanced About (IMDb + Silver Anvil), Google Form contact, and hero refresh.
+
+**Barbara review:** See [docs/barbara-review-checklist.md](docs/barbara-review-checklist.md) before merge.
