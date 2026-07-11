@@ -1475,25 +1475,6 @@ a.contact-item:hover { color: var(--color-navy); }
   color: var(--color-white);
 }
 
-.campaign-card--accent h3,
-.campaign-card--accent p,
-.campaign-card--accent .campaign-type {
-  color: inherit;
-}
-
-.campaign-card--accent p {
-  color: rgba(255,255,255,0.82);
-}
-
-.campaign-card--accent .campaign-type {
-  color: var(--color-gold-light);
-}
-
-.campaign-card--accent a {
-  color: var(--color-gold-light);
-  text-decoration: underline;
-}
-
 .campaign-type {
   display: inline-block;
   font-size: 0.6875rem;
@@ -1528,7 +1509,7 @@ a.contact-item:hover { color: var(--color-navy); }
 }
 
 .campaign-card--accent .campaign-result {
-  border-top-color: rgba(255,255,255,0.15);
+  border-top-color: rgba(255, 255, 255, 0.2);
 }
 
 .campaign-card a {
@@ -1540,6 +1521,30 @@ a.contact-item:hover { color: var(--color-navy); }
 
 .campaign-card a:hover {
   color: var(--color-green-light);
+}
+
+.campaign-card.campaign-card--accent h3 {
+  color: var(--color-white);
+}
+
+.campaign-card.campaign-card--accent p {
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.campaign-card.campaign-card--accent .campaign-type {
+  color: var(--color-gold-light);
+}
+
+.campaign-card.campaign-card--accent a {
+  color: var(--color-gold-light);
+}
+
+.campaign-card.campaign-card--accent a:hover {
+  color: #f5c06a;
+}
+
+.campaign-card.campaign-card--accent .campaign-result {
+  color: rgba(255, 255, 255, 0.92);
 }
 
 /* ============================================
