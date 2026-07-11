@@ -65,9 +65,9 @@
 
   /* ---------- Scroll reveal animations ---------- */
   const revealEls = document.querySelectorAll(
-    '.service-card, .client-card, .featured-client, .step, ' +
-    '.about-grid, .stat-item, .contact-form-wrap, .contact-info, ' +
-    '.approach-card'
+    '.service-card, .client-card, .featured-client, ' +
+    '.about-grid, .about-approach, .stat-item, .contact-form-wrap, .contact-info, ' +
+    '.campaign-card, .testimonial-card, .case-spotlight, .hero-logos'
   );
 
   revealEls.forEach(el => el.classList.add('reveal'));
@@ -92,82 +92,29 @@
     revealEls.forEach(el => el.classList.add('visible'));
   }
 
-  /* ---------- Contact form validation ---------- */
-  const form      = document.getElementById('contact-form');
-  const submitBtn = document.getElementById('submit-btn');
-  const successEl = document.getElementById('form-success');
+  /* ---------- Google Form embed ---------- */
+  const formEmbed    = document.getElementById('google-form-embed');
+  const formIframe   = document.getElementById('google-form-iframe');
+  const formFallback = document.getElementById('contact-form-fallback');
+  const formExternal = document.getElementById('google-form-external-link');
+  const formUrl      = window.ZAMOST_CONFIG?.googleFormUrl?.trim();
 
-  if (form) {
-    const fields = {
-      'first-name': { el: null, errorEl: null, validate: v => v.trim().length >= 2 ? '' : 'Please enter your first name.' },
-      'last-name':  { el: null, errorEl: null, validate: v => v.trim().length >= 2 ? '' : 'Please enter your last name.' },
-      'email':      { el: null, errorEl: null, validate: v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()) ? '' : 'Please enter a valid email address.' },
-      'message':    { el: null, errorEl: null, validate: v => v.trim().length >= 20 ? '' : 'Please enter at least 20 characters.' },
-    };
+  if (formUrl && formEmbed && formIframe) {
+    const viewformBase = formUrl.replace(/\?.*$/, '').replace(/\/$/, '');
+    const embedUrl = `${viewformBase}?embedded=true`;
+    formIframe.src = embedUrl;
+    if (formExternal) formExternal.href = viewformBase;
+    formEmbed.removeAttribute('hidden');
+    if (formFallback) formFallback.hidden = true;
+  }
 
-    // Cache elements
-    Object.keys(fields).forEach(id => {
-      fields[id].el      = document.getElementById(id);
-      fields[id].errorEl = document.getElementById(`${id}-error`);
-    });
-
-    const validateField = (id) => {
-      const { el, errorEl, validate } = fields[id];
-      if (!el) return true;
-      const msg = validate(el.value);
-      errorEl.textContent = msg;
-      el.classList.toggle('invalid', !!msg);
-      return !msg;
-    };
-
-    // Inline validation on blur
-    Object.keys(fields).forEach(id => {
-      const { el } = fields[id];
-      if (el) {
-        el.addEventListener('blur', () => validateField(id));
-        el.addEventListener('input', () => {
-          if (el.classList.contains('invalid')) validateField(id);
-        });
-      }
-    });
-
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-
-      const allValid = Object.keys(fields).map(validateField).every(Boolean);
-      if (!allValid) {
-        // Focus first invalid field
-        const firstInvalid = form.querySelector('.invalid');
-        if (firstInvalid) firstInvalid.focus();
-        return;
-      }
-
-      submitBtn.disabled = true;
-      submitBtn.textContent = 'Sending...';
-
-      try {
-        const response = await fetch(form.action, {
-          method: 'POST',
-          body: new FormData(form),
-          headers: { 'Accept': 'application/json' }
-        });
-
-        if (response.ok) {
-          form.reset();
-          form.hidden = true;
-          successEl.removeAttribute('hidden');
-          successEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        } else {
-          submitBtn.disabled = false;
-          submitBtn.textContent = 'Send Message';
-          alert('Something went wrong. Please try again or email barbara@zamostpr.com directly.');
-        }
-      } catch (err) {
-        submitBtn.disabled = false;
-        submitBtn.textContent = 'Send Message';
-        alert('Something went wrong. Please try again or email barbara@zamostpr.com directly.');
-      }
-    });
+  const calendlyLink = document.getElementById('calendly-link');
+  const calendlyUrl  = window.ZAMOST_CONFIG?.calendlyUrl?.trim();
+  if (calendlyUrl && calendlyLink) {
+    calendlyLink.href = calendlyUrl;
+    calendlyLink.removeAttribute('hidden');
+    calendlyLink.target = '_blank';
+    calendlyLink.rel = 'noopener noreferrer';
   }
 
   /* ---------- Active nav link on scroll ---------- */
