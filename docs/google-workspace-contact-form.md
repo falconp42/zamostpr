@@ -19,6 +19,9 @@ Use a Google Form for submissions. Google emails Barbara on each response and st
 | Last name | Short answer | Yes |
 | Email | Short answer | Yes (turn on response validation → Email) |
 | What do you need? | Dropdown | No — Campaign launch, Ongoing PR / media relations, Crisis communications, Media training, Other |
+| Organization type | Dropdown | Yes — Nonprofit, Consumer brand, Other |
+| Timeline | Dropdown | No — Within 30 days, 1–3 months, Ongoing partnership |
+| Biggest narrative challenge | Paragraph | No — open text |
 | Message | Paragraph | Yes |
 
 4. **Settings** (gear icon):

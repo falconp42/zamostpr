@@ -65,10 +65,9 @@
 
   /* ---------- Scroll reveal animations ---------- */
   const revealEls = document.querySelectorAll(
-    '.service-card, .client-card, .featured-client, .step, ' +
-    '.about-grid, .stat-item, .contact-form-wrap, .contact-info, ' +
-    '.approach-card, .campaign-card, .outlet-pills, .testimonial-card, ' +
-    '.case-spotlight, .media-logos'
+    '.service-card, .client-card, .featured-client, ' +
+    '.about-grid, .about-approach, .stat-item, .contact-form-wrap, .contact-info, ' +
+    '.campaign-card, .testimonial-card, .case-spotlight, .hero-logos'
   );
 
   revealEls.forEach(el => el.classList.add('reveal'));
