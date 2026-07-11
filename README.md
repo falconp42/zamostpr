@@ -23,7 +23,8 @@ Submissions use a **Google Form** on `barbara@zamostpr.com` (Google Workspace):
 
 ```javascript
 window.ZAMOST_CONFIG = {
-  googleFormUrl: 'https://docs.google.com/forms/d/e/YOUR_FORM_ID/viewform'
+  googleFormUrl: 'https://docs.google.com/forms/d/e/YOUR_FORM_ID/viewform',
+  calendlyUrl: ''  // optional: https://calendly.com/…
 };
 ```
 

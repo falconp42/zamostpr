@@ -778,19 +778,23 @@ input, textarea, select {
   box-shadow: var(--shadow-md);
 }
 
+.service-card--accent {
+  background: var(--color-white);
+  border-color: rgba(196, 160, 53, 0.35);
+  box-shadow: var(--shadow-sm);
+}
 
 .service-icon {
-  color: var(--color-green);
+  color: var(--color-navy);
   margin-bottom: var(--space-5);
   width: 48px;
   height: 48px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(44,110,79,0.1);
+  background: rgba(196, 160, 53, 0.12);
   border-radius: var(--radius-md);
 }
-
 
 .service-card h3 {
   font-family: var(--font-heading);
@@ -828,7 +832,36 @@ input, textarea, select {
   width: 5px;
   height: 5px;
   border-radius: 50%;
-  background: var(--color-green);
+  background: var(--color-gold);
+}
+
+.services-more {
+  text-align: center;
+  margin-top: var(--space-8);
+  font-size: 0.9375rem;
+  color: var(--color-text-mid);
+}
+
+.services-more a {
+  color: var(--color-navy);
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.contact-actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.contact-form-wrap .btn-outline {
+  color: var(--color-navy);
+  border-color: var(--color-navy);
+}
+
+.contact-form-wrap .btn-outline:hover {
+  background: var(--color-navy);
+  color: var(--color-white);
 }
 
 /* ============================================
@@ -1685,6 +1718,37 @@ a.contact-item:hover { color: var(--color-navy); }
   border-radius: 999px;
 }
 
+.media-logos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-4) var(--space-8);
+  max-width: 1000px;
+  margin-inline: auto;
+}
+
+.media-logo {
+  font-size: clamp(0.75rem, 1.6vw, 0.9375rem);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+  white-space: nowrap;
+  transition: color var(--trans-fast);
+}
+
+.media-logo:hover {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.media-logo--serif {
+  font-family: var(--font-heading);
+  text-transform: none;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
 /* ============================================
    TESTIMONIALS
    ============================================ */
@@ -1779,6 +1843,69 @@ a.contact-item:hover { color: var(--color-navy); }
   background: var(--color-white);
 }
 
+.case-spotlight {
+  margin-bottom: var(--space-10);
+  padding: clamp(var(--space-8), 4vw, var(--space-12));
+  border-radius: var(--radius-xl);
+  background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-navy-mid) 100%);
+  color: var(--color-white);
+}
+
+.case-spotlight-header {
+  margin-bottom: var(--space-8);
+}
+
+.case-spotlight-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700;
+  margin-top: var(--space-3);
+}
+
+.case-spotlight-title a {
+  color: var(--color-white);
+  text-decoration: none;
+}
+
+.case-spotlight-title a:hover {
+  color: var(--color-gold-light);
+}
+
+.case-spotlight .campaign-type {
+  color: var(--color-gold-light);
+}
+
+.case-spotlight-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+}
+
+.case-spotlight-item h4 {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-gold-light);
+  margin-bottom: var(--space-3);
+}
+
+.case-spotlight-item p {
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.case-spotlight-item a {
+  color: var(--color-gold-light);
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.case-spotlight-item--result p {
+  color: var(--color-white);
+}
+
 .campaigns-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -1813,6 +1940,10 @@ a.contact-item:hover { color: var(--color-navy); }
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: var(--space-6);
+}
+
+.campaigns-featured--single {
+  grid-template-columns: 1fr;
 }
 
 .campaign-type {
@@ -2004,6 +2135,10 @@ a.contact-item:hover { color: var(--color-navy); }
 }
 
 @media (max-width: 768px) {
+  .case-spotlight-grid {
+    grid-template-columns: 1fr;
+  }
+
   .testimonials-grid {
     grid-template-columns: 1fr;
   }

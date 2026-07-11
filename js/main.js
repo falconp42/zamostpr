@@ -67,7 +67,8 @@
   const revealEls = document.querySelectorAll(
     '.service-card, .client-card, .featured-client, .step, ' +
     '.about-grid, .stat-item, .contact-form-wrap, .contact-info, ' +
-    '.approach-card, .campaign-card, .outlet-pills, .testimonial-card'
+    '.approach-card, .campaign-card, .outlet-pills, .testimonial-card, ' +
+    '.case-spotlight, .media-logos'
   );
 
   revealEls.forEach(el => el.classList.add('reveal'));
@@ -106,6 +107,15 @@
     if (formExternal) formExternal.href = viewformBase;
     formEmbed.removeAttribute('hidden');
     if (formFallback) formFallback.hidden = true;
+  }
+
+  const calendlyLink = document.getElementById('calendly-link');
+  const calendlyUrl  = window.ZAMOST_CONFIG?.calendlyUrl?.trim();
+  if (calendlyUrl && calendlyLink) {
+    calendlyLink.href = calendlyUrl;
+    calendlyLink.removeAttribute('hidden');
+    calendlyLink.target = '_blank';
+    calendlyLink.rel = 'noopener noreferrer';
   }
 
   /* ---------- Active nav link on scroll ---------- */

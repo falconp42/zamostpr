@@ -1,8 +1,9 @@
 /**
- * Site config — paste Barbara's Google Form URL after setup.
- * Example:
- * https://docs.google.com/forms/d/e/1FAIpQLSdEXAMPLE/viewform
+ * Site config — paste URLs after setup.
  */
 window.ZAMOST_CONFIG = {
-  googleFormUrl: ''
+  /** Google Form view URL, e.g. https://docs.google.com/forms/d/e/…/viewform */
+  googleFormUrl: '',
+  /** Optional Calendly scheduling link, e.g. https://calendly.com/barbara-zamost/intro */
+  calendlyUrl: ''
 };
