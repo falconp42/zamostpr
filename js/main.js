@@ -67,7 +67,7 @@
   const revealEls = document.querySelectorAll(
     '.service-card, .client-card, .featured-client, .step, ' +
     '.about-grid, .stat-item, .contact-form-wrap, .contact-info, ' +
-    '.approach-card, .campaign-card, .outlet-pills'
+    '.approach-card, .campaign-card, .outlet-pills, .testimonial-card'
   );
 
   revealEls.forEach(el => el.classList.add('reveal'));
