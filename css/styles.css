@@ -1475,6 +1475,10 @@ a.contact-item:hover { color: var(--color-navy); }
   color: var(--color-white);
 }
 
+.campaign-card--featured {
+  grid-column: 1 / -1;
+}
+
 .campaign-type {
   display: inline-block;
   font-size: 0.6875rem;
@@ -1545,6 +1549,38 @@ a.contact-item:hover { color: var(--color-navy); }
 
 .campaign-card.campaign-card--accent .campaign-result {
   color: rgba(255, 255, 255, 0.92);
+}
+
+.hero-sub a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.hero-sub a:hover {
+  color: var(--color-gold-light);
+}
+
+.section-intro a {
+  color: var(--color-navy);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.section-intro a:hover {
+  color: var(--color-gold);
+}
+
+.about-lead a {
+  color: var(--color-navy);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.about-lead a:hover {
+  color: var(--color-gold);
 }
 
 /* ============================================
