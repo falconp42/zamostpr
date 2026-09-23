@@ -65,7 +65,7 @@
 
   /* ---------- Scroll reveal animations ---------- */
   const revealEls = document.querySelectorAll(
-    '.service-card, .client-card, .featured-client, .step, ' +
+    '.service-card, .client-card, .featured-client, ' +
     '.about-grid, .stat-item, .contact-form-wrap, .contact-info, ' +
     '.approach-card'
   );
