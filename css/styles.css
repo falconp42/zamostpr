@@ -580,73 +580,12 @@ input, textarea, select {
 }
 
 .service-card {
-  background: var(--color-white);
-  border: 3px solid var(--color-navy);
+  background: var(--color-cream);
+  border: 1px solid var(--color-border);
+  border-left: 5px solid var(--color-navy);
   border-radius: var(--radius-lg);
   padding: clamp(var(--space-6), 3vw, var(--space-8));
   transition: transform var(--trans-normal), box-shadow var(--trans-normal);
-  position: relative;
-}
-
-.service-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 5px;
-  background: var(--color-navy);
-  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
-}
-
-.service-card:nth-child(1) {
-  border-color: var(--color-navy);
-}
-
-.service-card:nth-child(1)::before {
-  background: var(--color-navy);
-}
-
-.service-card:nth-child(2) {
-  border-color: var(--color-gold);
-  background: rgba(200,136,42,0.05);
-}
-
-.service-card:nth-child(2)::before {
-  background: var(--color-gold);
-}
-
-.service-card:nth-child(3) {
-  border-color: var(--color-green);
-}
-
-.service-card:nth-child(3)::before {
-  background: var(--color-green);
-}
-
-.service-card:nth-child(4) {
-  border-color: var(--color-navy);
-}
-
-.service-card:nth-child(4)::before {
-  background: var(--color-navy);
-}
-
-.service-card:nth-child(5) {
-  border-color: var(--color-gold);
-  background: rgba(200,136,42,0.05);
-}
-
-.service-card:nth-child(5)::before {
-  background: var(--color-gold);
-}
-
-.service-card:nth-child(6) {
-  border-color: var(--color-green);
-}
-
-.service-card:nth-child(6)::before {
-  background: var(--color-green);
 }
 
 .service-card:hover {
@@ -855,8 +794,9 @@ input, textarea, select {
    CLIENTS
    ============================================ */
 .clients {
-  background: #b57824;
+  background: var(--color-cream);
   position: relative;
+  border-top: 3px solid var(--color-gold);
 }
 
 .clients::before {
@@ -869,18 +809,6 @@ input, textarea, select {
 .clients > .container {
   position: relative;
   z-index: 1;
-}
-
-.clients .section-tag {
-  color: var(--color-white);
-}
-
-.clients .section-title {
-  color: var(--color-white);
-}
-
-.clients .section-intro {
-  color: rgba(255,255,255,0.9);
 }
 
 .featured-client {
