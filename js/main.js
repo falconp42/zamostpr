@@ -191,4 +191,136 @@
     sections.forEach(s => sectionObserver.observe(s));
   }
 
+  /* ---------- Press Clips Carousel ---------- */
+  const carouselTrack = document.getElementById('carousel-track');
+  const carouselPrev = document.getElementById('carousel-prev');
+  const carouselNext = document.getElementById('carousel-next');
+  const carouselIndicators = document.getElementById('carousel-indicators');
+
+  if (carouselTrack && carouselPrev && carouselNext && carouselIndicators) {
+    const slides = Array.from(carouselTrack.children);
+    const slideCount = slides.length;
+    let currentIndex = 0;
+    let autoRotateTimer = null;
+    let isPaused = false;
+
+    const createIndicators = () => {
+      slides.forEach((_, index) => {
+        const indicator = document.createElement('button');
+        indicator.classList.add('carousel-indicator');
+        indicator.setAttribute('role', 'tab');
+        indicator.setAttribute('aria-label', `Go to press clip ${index + 1}`);
+        indicator.setAttribute('aria-selected', index === 0 ? 'true' : 'false');
+        if (index === 0) indicator.classList.add('active');
+        indicator.addEventListener('click', () => goToSlide(index));
+        carouselIndicators.appendChild(indicator);
+      });
+    };
+
+    const updateCarousel = () => {
+      carouselTrack.style.transform = `translateX(-${currentIndex * 100}%)`;
+      
+      carouselPrev.disabled = currentIndex === 0;
+      carouselNext.disabled = currentIndex === slideCount - 1;
+
+      const indicators = carouselIndicators.querySelectorAll('.carousel-indicator');
+      indicators.forEach((indicator, index) => {
+        indicator.classList.toggle('active', index === currentIndex);
+        indicator.setAttribute('aria-selected', index === currentIndex ? 'true' : 'false');
+      });
+
+      slides.forEach((slide, index) => {
+        slide.setAttribute('aria-hidden', index !== currentIndex ? 'true' : 'false');
+      });
+    };
+
+    const goToSlide = (index) => {
+      currentIndex = Math.max(0, Math.min(slideCount - 1, index));
+      updateCarousel();
+      resetAutoRotate();
+    };
+
+    const nextSlide = () => {
+      if (currentIndex < slideCount - 1) {
+        goToSlide(currentIndex + 1);
+      } else {
+        goToSlide(0);
+      }
+    };
+
+    const prevSlide = () => {
+      if (currentIndex > 0) {
+        goToSlide(currentIndex - 1);
+      }
+    };
+
+    const startAutoRotate = () => {
+      if (!isPaused) {
+        autoRotateTimer = setInterval(() => {
+          nextSlide();
+        }, 5000);
+      }
+    };
+
+    const stopAutoRotate = () => {
+      if (autoRotateTimer) {
+        clearInterval(autoRotateTimer);
+        autoRotateTimer = null;
+      }
+    };
+
+    const resetAutoRotate = () => {
+      stopAutoRotate();
+      startAutoRotate();
+    };
+
+    const pauseAutoRotate = () => {
+      isPaused = true;
+      stopAutoRotate();
+    };
+
+    const resumeAutoRotate = () => {
+      isPaused = false;
+      startAutoRotate();
+    };
+
+    carouselPrev.addEventListener('click', prevSlide);
+    carouselNext.addEventListener('click', nextSlide);
+
+    const carouselWrapper = document.querySelector('.carousel-wrapper');
+    if (carouselWrapper) {
+      carouselWrapper.addEventListener('mouseenter', pauseAutoRotate);
+      carouselWrapper.addEventListener('mouseleave', resumeAutoRotate);
+      carouselWrapper.addEventListener('focusin', pauseAutoRotate);
+      carouselWrapper.addEventListener('focusout', resumeAutoRotate);
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (document.activeElement && 
+          (document.activeElement === carouselPrev || 
+           document.activeElement === carouselNext ||
+           carouselIndicators.contains(document.activeElement))) {
+        if (e.key === 'ArrowLeft') {
+          e.preventDefault();
+          prevSlide();
+        } else if (e.key === 'ArrowRight') {
+          e.preventDefault();
+          nextSlide();
+        }
+      }
+    });
+
+    createIndicators();
+    updateCarousel();
+    startAutoRotate();
+
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) {
+        stopAutoRotate();
+      } else if (!isPaused) {
+        startAutoRotate();
+      }
+    });
+  }
+
 })();
