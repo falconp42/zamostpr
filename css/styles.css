@@ -545,27 +545,6 @@ input, textarea, select {
   margin-bottom: var(--space-4);
 }
 
-.about-highlights {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-3) var(--space-6);
-  margin-top: var(--space-6);
-}
-
-.highlight {
-  display: flex;
-  align-items: flex-start;
-  gap: var(--space-3);
-  font-size: 0.9375rem;
-  color: var(--color-text-mid);
-}
-
-.highlight-icon {
-  flex-shrink: 0;
-  color: var(--color-green);
-  margin-top: 1px;
-}
-
 /* ============================================
    SERVICES
    ============================================ */
@@ -1454,10 +1433,6 @@ a.contact-item:hover { color: var(--color-navy); }
   .about-image-wrap {
     max-width: 320px;
     margin-inline: auto;
-  }
-
-  .about-highlights {
-    grid-template-columns: 1fr;
   }
 
   /* Services */
