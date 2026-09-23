@@ -1435,10 +1435,6 @@ a.contact-item:hover { color: var(--color-navy); }
     margin-inline: auto;
   }
 
-  .about-highlights {
-    grid-template-columns: 1fr;
-  }
-
   /* Services */
   .services-grid {
     grid-template-columns: 1fr;
