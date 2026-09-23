@@ -570,7 +570,7 @@ input, textarea, select {
    SERVICES
    ============================================ */
 .services {
-  background: var(--color-white);
+  background: #f3ead9;
 }
 
 .services-grid {
@@ -794,7 +794,7 @@ input, textarea, select {
    CLIENTS
    ============================================ */
 .clients {
-  background: var(--color-cream);
+  background: #ead9b8;
   position: relative;
   border-top: 3px solid var(--color-gold);
 }
@@ -1017,7 +1017,7 @@ input, textarea, select {
    APPROACH
    ============================================ */
 .approach {
-  background: var(--color-white);
+  background: #eef2f7;
 }
 
 .approach-grid {
