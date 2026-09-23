@@ -255,6 +255,8 @@
     };
 
     const startAutoRotate = () => {
+      // Always clear any existing timer first to prevent multiple intervals
+      stopAutoRotate();
       if (!isPaused) {
         autoRotateTimer = setInterval(() => {
           nextSlide();
