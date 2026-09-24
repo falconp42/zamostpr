@@ -3,7 +3,7 @@
 **Date**: September 24, 2026  
 **Branch**: `staging`  
 **Deployment URL**: https://zamostpr-staging.netlify.app/  
-**Commit**: b111c26
+**Commit**: db34f83 (measured energy refinement per Alan's feedback)
 
 ---
 
@@ -55,31 +55,29 @@ Each card also includes:
 
 ---
 
-### 3. ✅ Increased Color & Visual Energy
+### 3. ✅ Measured Color Energy (Per Alan's Direction)
 
-Inspired by high-energy PR agency sites (Praytell, Shift), while maintaining Zamost PR's professional brand:
+Subtle, richer section tints that add warmth and visual interest while maintaining the professional navy/gold/warm brand:
 
-#### Section Backgrounds
-- **About**: Gradient cream background with subtle green accent overlay
-- **Services**: Triple-tone gradient (cream → warm yellow → tan) with gold/green radial accents
-- **Clients**: Diagonal gradient with gold accent overlay and 4px gold top border
-- **Approach**: Horizontal blue-gray gradient with navy accent overlay
-- **Contact**: Diagonal warm gradient with dual accent overlays (green + gold)
+#### Richer Section Background Tints
+- **About**: Warmer cream (#faf7f2) vs flat white
+- **Services**: Warmer tan/gold tint (#f6edd9) for noticeable energy
+- **Clients**: Deeper warm tan (#eddcbd) with gold top border
+- **Approach**: Subtle cool blue-gray (#eff3f7) 
+- **Contact**: Warm cream matching About (#faf7f2)
 
-#### Enhanced Components
-- **Section Tags**: Now vibrant gold gradient pills with white text and shadow effects
-- **Results Highlight Box**: Gold border, gradient background, enhanced shadow
-- **Carousel Container**: Bold 3px gold border around the entire carousel
-- **Client Cards**: Gradient accent bars at top (gold → green)
-- **Primary Buttons**: Gold gradient backgrounds with enhanced shadows
-- **Approach Quote Card**: Navy-to-green gradient with gold border
+#### What Changed (Measured Approach)
+- Solid, richer background tints instead of dramatic gradients
+- No gradient overlays or radial accents
+- Original section tags, buttons, and carousel styling preserved
+- No gold borders added to multiple elements
+- Clean, professional energy increase without redesign-level changes
 
-#### Visual Energy Features
-- Radial gradient overlays throughout for depth and dimension
-- Enhanced button hover states with stronger shadows
-- More pronounced color accents while maintaining readability
-- Stronger borders and outlines create visual hierarchy
-- Professional energy without sacrificing sophistication
+#### What Was Kept Bold
+- Service card 3px borders in navy/gold/green rotation (the main visual anchor)
+- Existing brand colors and typography
+- Professional, readable layouts
+- Original component styling
 
 ---
 
