@@ -453,7 +453,7 @@ input, textarea, select {
    ABOUT
    ============================================ */
 .about {
-  background: var(--color-cream);
+  background: #faf7f2;
 }
 
 .about-grid {
@@ -549,7 +549,7 @@ input, textarea, select {
    SERVICES
    ============================================ */
 .services {
-  background: #f3ead9;
+  background: #f6edd9;
 }
 
 .services-grid {
@@ -559,12 +559,35 @@ input, textarea, select {
 }
 
 .service-card {
-  background: var(--color-cream);
-  border: 1px solid var(--color-border);
-  border-left: 5px solid var(--color-navy);
+  background: var(--color-white);
+  border: 3px solid var(--color-navy);
   border-radius: var(--radius-lg);
   padding: clamp(var(--space-6), 3vw, var(--space-8));
   transition: transform var(--trans-normal), box-shadow var(--trans-normal);
+}
+
+.service-card:nth-child(1) {
+  border-color: var(--color-navy);
+}
+
+.service-card:nth-child(2) {
+  border-color: var(--color-gold);
+}
+
+.service-card:nth-child(3) {
+  border-color: var(--color-green);
+}
+
+.service-card:nth-child(4) {
+  border-color: var(--color-navy);
+}
+
+.service-card:nth-child(5) {
+  border-color: var(--color-gold);
+}
+
+.service-card:nth-child(6) {
+  border-color: var(--color-green);
 }
 
 .service-card:hover {
@@ -643,8 +666,9 @@ input, textarea, select {
 .carousel-track-container {
   flex: 1;
   overflow: hidden;
-  border-radius: var(--radius-lg);
-  background: var(--color-cream);
+  border-radius: 0;
+  background: #e8f3f8;
+  border: 12px solid var(--color-navy);
   box-shadow: var(--shadow-lg);
 }
 
@@ -660,7 +684,7 @@ input, textarea, select {
   align-items: center;
   justify-content: center;
   padding: var(--space-8);
-  background: var(--color-white);
+  background: #e8f3f8;
 }
 
 .carousel-slide img {
@@ -668,7 +692,7 @@ input, textarea, select {
   max-height: 500px;
   height: auto;
   object-fit: contain;
-  border-radius: var(--radius-md);
+  border-radius: 0;
   box-shadow: var(--shadow-md);
 }
 
@@ -773,7 +797,7 @@ input, textarea, select {
    CLIENTS
    ============================================ */
 .clients {
-  background: #ead9b8;
+  background: #eddcbd;
   position: relative;
   border-top: 3px solid var(--color-gold);
 }
@@ -996,7 +1020,7 @@ input, textarea, select {
    APPROACH
    ============================================ */
 .approach {
-  background: #eef2f7;
+  background: #eff3f7;
 }
 
 .approach-grid {
@@ -1066,7 +1090,7 @@ input, textarea, select {
    CONTACT
    ============================================ */
 .contact {
-  background: var(--color-cream);
+  background: #faf7f2;
 }
 
 .contact-grid {
