@@ -106,11 +106,15 @@ input, textarea, select {
 .section-tag {
   display: inline-block;
   font-size: 0.75rem;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--color-gold);
+  color: var(--color-white);
+  background: linear-gradient(135deg, var(--color-gold) 0%, var(--color-gold-light) 100%);
+  padding: 0.4rem 1rem;
+  border-radius: 999px;
   margin-bottom: var(--space-4);
+  box-shadow: 0 2px 8px rgba(200,136,42,.25);
 }
 
 .section-title {
@@ -151,14 +155,15 @@ input, textarea, select {
 }
 
 .btn-primary {
-  background: var(--color-gold);
+  background: linear-gradient(135deg, var(--color-gold) 0%, var(--color-gold-light) 100%);
   color: var(--color-white);
-  box-shadow: 0 2px 8px rgba(200,136,42,.35);
+  box-shadow: 0 4px 12px rgba(200,136,42,.4);
+  font-weight: 700;
 }
 .btn-primary:hover, .btn-primary:focus-visible {
-  background: var(--color-gold-light);
-  box-shadow: 0 4px 16px rgba(200,136,42,.4);
-  transform: translateY(-1px);
+  background: linear-gradient(135deg, var(--color-gold-light) 0%, var(--color-gold) 100%);
+  box-shadow: 0 6px 20px rgba(200,136,42,.5);
+  transform: translateY(-2px);
 }
 
 .btn-ghost {
@@ -414,10 +419,25 @@ input, textarea, select {
 .results-highlight {
   text-align: center;
   margin-block: var(--space-8) var(--space-12);
+  background: linear-gradient(135deg, rgba(26,45,74,0.03) 0%, rgba(200,136,42,0.05) 100%);
+  border: 2px solid var(--color-gold);
+  border-radius: var(--radius-xl);
+  padding: var(--space-8);
+  box-shadow: 0 4px 16px rgba(200,136,42,.15);
 }
 
 .results-highlight h3 {
   margin-bottom: var(--space-4);
+  font-family: var(--font-heading);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700;
+  color: var(--color-navy);
+}
+
+.results-highlight p {
+  color: var(--color-text-mid);
+  line-height: 1.8;
+  font-size: 1.05rem;
 }
 
 .stats-grid {
@@ -453,7 +473,22 @@ input, textarea, select {
    ABOUT
    ============================================ */
 .about {
-  background: var(--color-cream);
+  background: linear-gradient(to bottom, #f7f4ef 0%, #fef9f0 100%);
+  position: relative;
+}
+
+.about::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 80% 20%, rgba(44,110,79,0.06) 0%, transparent 40%);
+  pointer-events: none;
+}
+
+.about > .container {
+  position: relative;
+  z-index: 1;
 }
 
 .about-grid {
@@ -549,7 +584,23 @@ input, textarea, select {
    SERVICES
    ============================================ */
 .services {
-  background: #f3ead9;
+  background: linear-gradient(135deg, #f7f4ef 0%, #fef8e8 50%, #f0e6d2 100%);
+  position: relative;
+}
+
+.services::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 10% 20%, rgba(200,136,42,0.08) 0%, transparent 50%),
+    radial-gradient(circle at 90% 80%, rgba(44,110,79,0.08) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.services > .container {
+  position: relative;
+  z-index: 1;
 }
 
 .services-grid {
@@ -559,17 +610,54 @@ input, textarea, select {
 }
 
 .service-card {
-  background: var(--color-cream);
-  border: 1px solid var(--color-border);
-  border-left: 5px solid var(--color-navy);
+  background: var(--color-white);
+  border: 3px solid var(--color-navy);
   border-radius: var(--radius-lg);
   padding: clamp(var(--space-6), 3vw, var(--space-8));
-  transition: transform var(--trans-normal), box-shadow var(--trans-normal);
+  transition: transform var(--trans-normal), box-shadow var(--trans-normal), border-color var(--trans-normal);
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 6px;
+  background: linear-gradient(to bottom, var(--color-gold), var(--color-green));
+  border-radius: var(--radius-lg) 0 0 var(--radius-lg);
+}
+
+.service-card:nth-child(1) {
+  border-color: var(--color-navy);
+}
+
+.service-card:nth-child(2) {
+  border-color: var(--color-gold);
+}
+
+.service-card:nth-child(3) {
+  border-color: var(--color-green);
+}
+
+.service-card:nth-child(4) {
+  border-color: var(--color-navy);
+}
+
+.service-card:nth-child(5) {
+  border-color: var(--color-gold);
+}
+
+.service-card:nth-child(6) {
+  border-color: var(--color-green);
 }
 
 .service-card:hover {
   transform: translateY(-3px);
-  box-shadow: var(--shadow-md);
+  box-shadow: 0 8px 24px rgba(0,0,0,.15);
+  border-width: 4px;
 }
 
 .service-icon {
@@ -644,8 +732,9 @@ input, textarea, select {
   flex: 1;
   overflow: hidden;
   border-radius: var(--radius-lg);
-  background: var(--color-cream);
-  box-shadow: var(--shadow-lg);
+  background: var(--color-white);
+  box-shadow: 0 8px 32px rgba(0,0,0,.12), 0 0 0 3px var(--color-gold);
+  border: 3px solid var(--color-gold);
 }
 
 .carousel-track {
@@ -773,9 +862,18 @@ input, textarea, select {
    CLIENTS
    ============================================ */
 .clients {
-  background: #ead9b8;
+  background: linear-gradient(135deg, #ead9b8 0%, #f4e4c8 50%, #e8d4ae 100%);
   position: relative;
-  border-top: 3px solid var(--color-gold);
+  border-top: 4px solid var(--color-gold);
+}
+
+.clients::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 30% 70%, rgba(200,136,42,0.1) 0%, transparent 40%);
+  pointer-events: none;
 }
 
 .clients::before {
@@ -894,19 +992,31 @@ input, textarea, select {
 
 .client-card {
   background: var(--color-white);
-  border: 1px solid var(--color-border);
+  border: 2px solid var(--color-border);
   border-radius: var(--radius-lg);
   padding: var(--space-6);
   text-align: left;
-  transition: transform var(--trans-normal), box-shadow var(--trans-normal);
+  transition: transform var(--trans-normal), box-shadow var(--trans-normal), border-color var(--trans-normal);
   position: relative;
   overflow: hidden;
   width: 100%;
 }
 
+.client-card::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-gold) 0%, var(--color-green) 100%);
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+
 .client-card:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-sm);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0,0,0,.1);
+  border-color: var(--color-gold);
 }
 
 .client-icon {
@@ -996,7 +1106,22 @@ input, textarea, select {
    APPROACH
    ============================================ */
 .approach {
-  background: #eef2f7;
+  background: linear-gradient(to right, #eef2f7 0%, #f0f4f8 50%, #e8f0f6 100%);
+  position: relative;
+}
+
+.approach::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 70% 50%, rgba(26,45,74,0.04) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.approach > .container {
+  position: relative;
+  z-index: 1;
 }
 
 .approach-grid {
@@ -1025,7 +1150,9 @@ input, textarea, select {
 }
 
 .approach-card--1 {
-  background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-navy-mid) 100%);
+  background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-navy-mid) 50%, var(--color-green) 100%);
+  box-shadow: 0 6px 24px rgba(26,45,74,.2);
+  border: 3px solid var(--color-gold);
 }
 
 .approach-quote {
@@ -1066,7 +1193,23 @@ input, textarea, select {
    CONTACT
    ============================================ */
 .contact {
-  background: var(--color-cream);
+  background: linear-gradient(135deg, #fef8e8 0%, #f7f4ef 50%, #f0e8d8 100%);
+  position: relative;
+}
+
+.contact::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 20% 80%, rgba(44,110,79,0.06) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(200,136,42,0.08) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.contact > .container {
+  position: relative;
+  z-index: 1;
 }
 
 .contact-grid {
