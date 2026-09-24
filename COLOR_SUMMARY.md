@@ -7,19 +7,24 @@
 
 ---
 
-## 🎨 CAROUSEL BACKGROUND CHANGE
+## 🎨 CAROUSEL COLOR TREATMENT
 
-**Color Choice**: **Deep Navy Gradient** 
+**Section Background**: **Deep Navy Gradient** 
 - Gradient: `#1a2d4a` → `#243756`
-- **NOT** white, beige, gold, cream, tan, or champagne (as explicitly ruled out)
-- Strong, sophisticated contrast with press clip images
-- Professional PR-agency energy
+- Creates dramatic frame around entire carousel area
+- White heading text, gold buttons
+
+**Image Frame/Matte**: **Soft Light Blue** (`#e8f3f8`)
+- The white frame around each press clip image replaced with soft light blue
+- **NOT** white, beige, gold, cream, tan, champagne, or deep navy (ruled out)
+- Clean, professional mat color for photography
+- Good contrast with images and navy section behind
+- Captions remain dark and readable
 
 **Carousel Enhancements**:
-- Carousel container: White background with **3px gold border**
+- Container border: **3px gold**
 - Navigation buttons: **Gold** with white borders and shadows
 - Indicators: White (inactive), Gold (active)
-- Heading: White text
 - Container has rounded corners and shadow for depth
 
 ---
