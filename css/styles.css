@@ -106,11 +106,15 @@ input, textarea, select {
 .section-tag {
   display: inline-block;
   font-size: 0.75rem;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--color-gold);
+  color: var(--color-white);
+  background: var(--color-gold);
+  padding: 0.4rem 1.1rem;
+  border-radius: 999px;
   margin-bottom: var(--space-4);
+  box-shadow: 0 3px 10px rgba(200,136,42,.4);
 }
 
 .section-title {
@@ -151,14 +155,15 @@ input, textarea, select {
 }
 
 .btn-primary {
-  background: var(--color-gold);
+  background: linear-gradient(135deg, var(--color-gold) 0%, var(--color-gold-light) 100%);
   color: var(--color-white);
-  box-shadow: 0 2px 8px rgba(200,136,42,.35);
+  box-shadow: 0 4px 14px rgba(200,136,42,.5);
+  font-weight: 700;
 }
 .btn-primary:hover, .btn-primary:focus-visible {
-  background: var(--color-gold-light);
-  box-shadow: 0 4px 16px rgba(200,136,42,.4);
-  transform: translateY(-1px);
+  background: linear-gradient(135deg, var(--color-gold-light) 0%, var(--color-gold) 100%);
+  box-shadow: 0 6px 20px rgba(200,136,42,.6);
+  transform: translateY(-2px);
 }
 
 .btn-ghost {
@@ -295,7 +300,7 @@ input, textarea, select {
 .hero {
   position: relative;
   min-height: 100svh;
-  background: linear-gradient(to bottom, rgba(26,45,74,0.55) 0%, rgba(26,45,74,0.7) 100%),
+  background: linear-gradient(to bottom, rgba(26,45,74,0.65) 0%, rgba(26,45,74,0.85) 100%),
               url('../images/TVSunset.jpg') center 20% / cover no-repeat;
   display: flex;
   flex-direction: column;
@@ -414,10 +419,25 @@ input, textarea, select {
 .results-highlight {
   text-align: center;
   margin-block: var(--space-8) var(--space-12);
+  background: rgba(26,45,74,0.08);
+  border: 3px solid var(--color-navy);
+  border-radius: var(--radius-xl);
+  padding: var(--space-8);
+  box-shadow: 0 4px 16px rgba(26,45,74,.15);
 }
 
 .results-highlight h3 {
   margin-bottom: var(--space-4);
+  color: var(--color-navy);
+  font-family: var(--font-heading);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700;
+}
+
+.results-highlight p {
+  color: var(--color-text);
+  line-height: 1.75;
+  font-size: 1.05rem;
 }
 
 .stats-grid {
@@ -453,7 +473,7 @@ input, textarea, select {
    ABOUT
    ============================================ */
 .about {
-  background: #faf7f2;
+  background: linear-gradient(135deg, #e8f4f0 0%, #d4e9e3 100%);
 }
 
 .about-grid {
@@ -549,7 +569,7 @@ input, textarea, select {
    SERVICES
    ============================================ */
 .services {
-  background: #f6edd9;
+  background: linear-gradient(135deg, #f5d97f 0%, #f0ca6f 50%, #e6b84a 100%);
 }
 
 .services-grid {
@@ -560,39 +580,46 @@ input, textarea, select {
 
 .service-card {
   background: var(--color-white);
-  border: 3px solid var(--color-navy);
+  border: 4px solid var(--color-navy);
   border-radius: var(--radius-lg);
   padding: clamp(var(--space-6), 3vw, var(--space-8));
   transition: transform var(--trans-normal), box-shadow var(--trans-normal);
+  box-shadow: 0 4px 16px rgba(0,0,0,.1);
 }
 
 .service-card:nth-child(1) {
   border-color: var(--color-navy);
+  border-left-width: 8px;
 }
 
 .service-card:nth-child(2) {
   border-color: var(--color-gold);
+  border-left-width: 8px;
 }
 
 .service-card:nth-child(3) {
   border-color: var(--color-green);
+  border-left-width: 8px;
 }
 
 .service-card:nth-child(4) {
   border-color: var(--color-navy);
+  border-left-width: 8px;
 }
 
 .service-card:nth-child(5) {
   border-color: var(--color-gold);
+  border-left-width: 8px;
 }
 
 .service-card:nth-child(6) {
   border-color: var(--color-green);
+  border-left-width: 8px;
 }
 
 .service-card:hover {
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 32px rgba(0,0,0,.15);
 }
 
 .service-icon {
@@ -645,13 +672,17 @@ input, textarea, select {
 .press-clips-carousel {
   margin-block: var(--space-12) var(--space-16);
   text-align: center;
+  background: linear-gradient(135deg, #1a2d4a 0%, #243756 100%);
+  padding: var(--space-10);
+  border-radius: var(--radius-xl);
+  box-shadow: 0 8px 32px rgba(0,0,0,.2);
 }
 
 .press-clips-carousel h3 {
   font-family: var(--font-heading);
   font-size: clamp(1.5rem, 3vw, 2rem);
   font-weight: 700;
-  color: var(--color-navy);
+  color: var(--color-white);
   margin-bottom: var(--space-8);
 }
 
@@ -667,8 +698,9 @@ input, textarea, select {
   flex: 1;
   overflow: hidden;
   border-radius: var(--radius-lg);
-  background: var(--color-cream);
-  box-shadow: var(--shadow-lg);
+  background: var(--color-white);
+  box-shadow: 0 6px 24px rgba(0,0,0,.3);
+  border: 3px solid var(--color-gold);
 }
 
 .carousel-track {
@@ -706,9 +738,9 @@ input, textarea, select {
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  background: var(--color-navy);
+  background: var(--color-gold);
   color: var(--color-white);
-  border: none;
+  border: 2px solid var(--color-white);
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -716,10 +748,11 @@ input, textarea, select {
   transition: background var(--trans-normal), transform var(--trans-fast);
   flex-shrink: 0;
   z-index: 2;
+  box-shadow: 0 4px 12px rgba(0,0,0,.3);
 }
 
 .carousel-btn:hover {
-  background: var(--color-gold);
+  background: var(--color-gold-light);
   transform: scale(1.1);
 }
 
@@ -729,8 +762,14 @@ input, textarea, select {
   transform: scale(1);
 }
 
+.carousel-btn:disabled {
+  background: rgba(200,136,42,0.4);
+  border-color: rgba(255,255,255,0.3);
+}
+
 .carousel-btn:disabled:hover {
-  background: var(--color-navy);
+  background: rgba(200,136,42,0.4);
+  transform: scale(1);
 }
 
 .carousel-indicators {
@@ -744,7 +783,7 @@ input, textarea, select {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background: var(--color-border);
+  background: rgba(255,255,255,0.4);
   border: none;
   cursor: pointer;
   transition: background var(--trans-fast), transform var(--trans-fast);
@@ -752,7 +791,7 @@ input, textarea, select {
 }
 
 .carousel-indicator:hover {
-  background: var(--color-gold-light);
+  background: rgba(255,255,255,0.7);
   transform: scale(1.2);
 }
 
@@ -796,9 +835,9 @@ input, textarea, select {
    CLIENTS
    ============================================ */
 .clients {
-  background: #eddcbd;
+  background: linear-gradient(to bottom, #1a2d4a 0%, #243756 100%);
   position: relative;
-  border-top: 3px solid var(--color-gold);
+  border-top: 4px solid var(--color-gold);
 }
 
 .clients::before {
@@ -811,6 +850,19 @@ input, textarea, select {
 .clients > .container {
   position: relative;
   z-index: 1;
+}
+
+.clients .section-title {
+  color: var(--color-white);
+}
+
+.clients .section-tag {
+  background: var(--color-gold-light);
+  color: var(--color-navy);
+}
+
+.clients .section-intro {
+  color: rgba(255,255,255,0.85);
 }
 
 .featured-client {
@@ -949,7 +1001,7 @@ input, textarea, select {
   font-family: var(--font-heading);
   font-size: 1rem;
   font-weight: 600;
-  color: var(--color-navy);
+  color: var(--color-gold);
   margin-bottom: var(--space-2);
 }
 
@@ -1019,7 +1071,16 @@ input, textarea, select {
    APPROACH
    ============================================ */
 .approach {
-  background: #eff3f7;
+  background: linear-gradient(135deg, #2c6e4f 0%, #3a8a63 100%);
+}
+
+.approach .section-title {
+  color: var(--color-white);
+}
+
+.approach .section-tag {
+  background: var(--color-gold-light);
+  color: var(--color-navy);
 }
 
 .approach-grid {
@@ -1031,7 +1092,7 @@ input, textarea, select {
 
 .approach-text > p {
   font-size: 1.05rem;
-  color: var(--color-text-mid);
+  color: rgba(255,255,255,0.95);
   line-height: 1.7;
 }
 
@@ -1049,6 +1110,8 @@ input, textarea, select {
 
 .approach-card--1 {
   background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-navy-mid) 100%);
+  border: 3px solid var(--color-gold);
+  box-shadow: 0 8px 24px rgba(0,0,0,.3);
 }
 
 .approach-quote {
@@ -1089,7 +1152,16 @@ input, textarea, select {
    CONTACT
    ============================================ */
 .contact {
-  background: #faf7f2;
+  background: linear-gradient(135deg, #d4a76a 0%, #c8882a 100%);
+}
+
+.contact .section-title {
+  color: var(--color-white);
+}
+
+.contact .section-tag {
+  color: var(--color-navy);
+  font-weight: 700;
 }
 
 .contact-grid {
@@ -1101,7 +1173,7 @@ input, textarea, select {
 
 .contact-info > p {
   font-size: 1.05rem;
-  color: var(--color-text-mid);
+  color: rgba(255,255,255,0.95);
   line-height: 1.7;
   margin-bottom: var(--space-8);
 }
@@ -1117,7 +1189,7 @@ input, textarea, select {
   align-items: center;
   gap: var(--space-4);
   font-size: 1rem;
-  color: var(--color-text-mid);
+  color: var(--color-white);
   text-decoration: none;
   transition: color var(--trans-fast);
 }
@@ -1127,14 +1199,14 @@ a.contact-item:hover { color: var(--color-navy); }
 .contact-item-icon {
   width: 44px;
   height: 44px;
-  background: var(--color-white);
-  border: 1px solid var(--color-border);
+  background: var(--color-navy);
+  border: 2px solid var(--color-white);
   border-radius: var(--radius-md);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  color: var(--color-green);
+  color: var(--color-white);
   box-shadow: var(--shadow-sm);
 }
 
