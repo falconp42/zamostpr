@@ -698,7 +698,7 @@ input, textarea, select {
   flex: 1;
   overflow: hidden;
   border-radius: var(--radius-lg);
-  background: var(--color-white);
+  background: #e8f3f8;
   box-shadow: 0 6px 24px rgba(0,0,0,.3);
   border: 3px solid var(--color-gold);
 }
@@ -715,7 +715,7 @@ input, textarea, select {
   align-items: center;
   justify-content: center;
   padding: var(--space-8);
-  background: var(--color-white);
+  background: #e8f3f8;
 }
 
 .carousel-slide img {
