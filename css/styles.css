@@ -668,6 +668,7 @@ input, textarea, select {
   overflow: hidden;
   border-radius: var(--radius-lg);
   background: #e8f3f8;
+  border: 12px solid var(--color-navy);
   box-shadow: var(--shadow-lg);
 }
 
